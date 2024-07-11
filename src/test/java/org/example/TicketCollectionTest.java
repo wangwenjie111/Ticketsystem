@@ -54,7 +54,7 @@ public class TicketCollectionTest {
         assertEquals(1, retrievedTicket.getTicket_id());
     }
 
-    /*@Test
+    /* @Test
     public void testGetAllTickets() {
         Passenger passenger = new Passenger("John", "Doe", 25, "男性", "john.doe@example.com", "0412345678", "A12345678", "1234567890123456", 123);
         Flight flight = new Flight(); // 填写Flight类所需参数
