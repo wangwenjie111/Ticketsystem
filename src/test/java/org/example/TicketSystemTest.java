@@ -61,11 +61,11 @@ public class TicketSystemTest {
         assertTrue(ticket.ticketStatus());
     }
 
-    /*@Test
+    @Test
     public void testChooseTicket_InvalidCity() throws Exception {
         ticketSystem.chooseTicket("New York", "London");
         assertTrue(ticket.ticketStatus());
-    }*/
+    }
 
     @Test
     public void testBuyTicket_AlreadyBooked() throws Exception {
