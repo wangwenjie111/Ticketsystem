@@ -13,7 +13,6 @@ public class FlightCollection {
 		FlightCollection.flights.addAll(flights);
 		return true;
 	}
-
 	public static void addFlight(Flight flight) {
 //		if (!isValidCity(flight.getDepartFrom()) || !isValidCity(flight.getDepartTo())) {
 //			throw new IllegalArgumentException("Invalid city names. Please use valid city names.");
