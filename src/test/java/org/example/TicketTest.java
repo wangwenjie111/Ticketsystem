@@ -1,4 +1,4 @@
-package org.example;//tested by Xingcai Zhang
+package org.example; // tested by Xingcai Zhang 34355979
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -6,11 +6,11 @@ public class TicketTest {
 
     @Test
     public void testTicketCreation() {
-        Passenger passenger = new Passenger("John", "Doe", 25, "男性", "john.doe@example.com", "0412345678", "A12345678", "1234567890123456", 123);
-        Flight flight = new Flight(/* 参数 */); // 填写Flight类所需参数
+        Passenger passenger = new Passenger("John", "Doe", 25, "Male", "john.doe@example.com", "0412345678", "A12345678", "1234567890123456", 123);
+        Flight flight = new Flight(/* parameters */); // Fill in the required parameters for the Flight class
         Ticket ticket = new Ticket(1, 1000, flight, false, passenger);
         assertEquals(1, ticket.getTicket_id());
-        assertEquals(1000 * 1.12, ticket.getPrice(), 0.01); // 检查服务税后的价格
+        assertEquals(1000 * 1.12, ticket.getPrice(), 0.01); // Check price after service tax
         assertEquals(flight, ticket.getFlight());
         assertEquals(false, ticket.getClassVip());
         assertEquals(false, ticket.ticketStatus());
@@ -43,8 +43,8 @@ public class TicketTest {
 
     @Test
     public void testValidFlightAndPassenger() {
-        Passenger passenger = new Passenger("John", "Doe", 25, "男性", "john.doe@example.com", "0412345678", "A12345678", "1234567890123456", 123);
-        Flight flight = new Flight(/* 参数 */);
+        Passenger passenger = new Passenger("John", "Doe", 25, "Male", "john.doe@example.com", "0412345678", "A12345678", "1234567890123456", 123);
+        Flight flight = new Flight(/* parameters */);
         Ticket ticket = new Ticket(1, 1000, flight, false, passenger);
         assertNotNull(ticket.getPassenger());
         assertNotNull(ticket.getFlight());
@@ -52,28 +52,28 @@ public class TicketTest {
 
     @Test
     public void testSaleByAge() {
-        Passenger child = new Passenger("Child", "Doe", 10, "男性", "child.doe@example.com", "0412345678", "A12345678", "1234567890123456", 123);
-        Passenger adult = new Passenger("Adult", "Doe", 30, "男性", "adult.doe@example.com", "0412345678", "A12345678", "1234567890123456", 123);
-        Passenger elderly = new Passenger("Elderly", "Doe", 65, "男性", "elderly.doe@example.com", "0412345678", "A12345678", "1234567890123456", 123);
+        Passenger child = new Passenger("Child", "Doe", 10, "Male", "child.doe@example.com", "0412345678", "A12345678", "1234567890123456", 123);
+        Passenger adult = new Passenger("Adult", "Doe", 30, "Male", "adult.doe@example.com", "0412345678", "A12345678", "1234567890123456", 123);
+        Passenger elderly = new Passenger("Elderly", "Doe", 65, "Male", "elderly.doe@example.com", "0412345678", "A12345678", "1234567890123456", 123);
 
-        Flight flight = new Flight(/* 参数 */);
+        Flight flight = new Flight(/* parameters */);
 
         Ticket childTicket = new Ticket(1, 1000, flight, false, child);
-        assertEquals(1000 * 0.5 * 1.12, childTicket.getPrice(), 0.01); // 50% 折扣后加服务税
+        assertEquals(1000 * 0.5 * 1.12, childTicket.getPrice(), 0.01); // 50% discount plus service tax
 
         Ticket adultTicket = new Ticket(2, 1000, flight, false, adult);
-        assertEquals(1000 * 1.12, adultTicket.getPrice(), 0.01); // 无折扣，仅服务税
+        assertEquals(1000 * 1.12, adultTicket.getPrice(), 0.01); // No discount, only service tax
 
         Ticket elderlyTicket = new Ticket(3, 1000, flight, false, elderly);
-        assertEquals(0, elderlyTicket.getPrice(), 0.01); // 100% 折扣
+        assertEquals(0, elderlyTicket.getPrice(), 0.01); // 100% discount
     }
 
     @Test
     public void testServiceTaxApplication() {
-        Passenger passenger = new Passenger("John", "Doe", 25, "男性", "john.doe@example.com", "0412345678", "A12345678", "1234567890123456", 123);
-        Flight flight = new Flight(/* 参数 */); // 填写Flight类所需参数
+        Passenger passenger = new Passenger("John", "Doe", 25, "Male", "john.doe@example.com", "0412345678", "A12345678", "1234567890123456", 123);
+        Flight flight = new Flight(/* parameters */); // Fill in the required parameters for the Flight class
         Ticket ticket = new Ticket(1, 1000, flight, false, passenger);
-        ticket.setPrice(1000); // 确保乘客和航班已初始化
-        assertEquals(1000 * 1.12, ticket.getPrice(), 0.01); // 检查服务税后的价格
+        ticket.setPrice(1000); // Ensure passenger and flight are initialized
+        assertEquals(1000 * 1.12, ticket.getPrice(), 0.01); // Check price after service tax
     }
 }
