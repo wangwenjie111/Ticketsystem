@@ -40,7 +40,7 @@ public class TicketCollection {
 
     }
 
-	private static boolean isValidTicket(Ticket ticket) {
+	public static boolean isValidTicket(Ticket ticket) {
 		return ticket != null && ticket.getTicket_id() >= 0 && ticket.getPrice() >= 0 && ticket.getFlight() != null && ticket.getPassenger() != null;
 	}
 
