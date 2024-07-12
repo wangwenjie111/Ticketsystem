@@ -7,8 +7,12 @@ public class FlightCollection {
 		return flights;
 	}
 
-	public static void addFlights(ArrayList<Flight> flights) {
+	public static boolean addFlights(ArrayList<Flight> flights) {
+		if (flights.contains(flights)) {
+			return false; // 航班已存在
+		}
 		FlightCollection.flights.addAll(flights);
+		return true;
 	}
 	public static void addFlight(Flight flight) {
 //		if (!isValidCity(flight.getDepartFrom()) || !isValidCity(flight.getDepartTo())) {

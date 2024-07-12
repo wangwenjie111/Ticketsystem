@@ -17,7 +17,6 @@ public class Flight {
     Airplane airplane;
 
     public Flight(){}
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
     public Flight(int flight_id, String departTo, String departFrom, String code, String company, Timestamp dateFrom,Timestamp dateTo, Airplane airplane)
     {
         this.flightID=flight_id;
@@ -105,19 +104,5 @@ public class Flight {
                 ", company=" + getCompany() + '\'' +
                 ", code=" + getCode() + '\'' +
                 '}';
-    }
-
-    public static void main(String[] args) {
-        Flight flight;
-        Airplane airplane;
-        airplane = new Airplane(1, "Boeing 737", 12, 150, 6);
-        flight = new Flight(1, "Beijing", "Shanghai", "CA123", "Air China",
-                Timestamp.valueOf("2024-07-14 08:00:00"), Timestamp.valueOf("2024-07-14 10:00:00"), airplane);
-
-        Timestamp invalidDate =flight.getDateTo(); // 日期格式无效
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yy, HH:mm:ss");
-        String formattedTimestamp1 = dateFormat.format(invalidDate);
-        System.out.println(formattedTimestamp1);
-        System.out.println(formattedTimestamp1.equals(invalidDate));
     }
 }
