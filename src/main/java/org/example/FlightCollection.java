@@ -2,7 +2,6 @@ package org.example;
 import java.util.ArrayList;
 public class FlightCollection {
 	public static ArrayList<Flight> flights= new ArrayList<>();
-
 	public static ArrayList<Flight> getFlights() {
 		return flights;
 	}
