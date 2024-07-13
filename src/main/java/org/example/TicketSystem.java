@@ -17,6 +17,15 @@ public class TicketSystem {
         this.in = new Scanner(System.in);
     }
 
+//    public TicketSystem(Scanner in) {
+//        this.passenger = new Passenger();
+//        this.ticket = new Ticket();
+//        this.flight = new Flight();
+//        this.in = new Scanner(System.in);
+//    }
+
+
+
     public void showTicket() {
         try {
             System.out.println("You have bought a ticket for flight " + ticket.getFlight().getDepartFrom() + " - " + ticket.getFlight().getDepartTo() + "\n\nDetails:");
@@ -44,6 +53,7 @@ public class TicketSystem {
         try {
             System.out.println("Enter your First Name: ");
             String firstName = "John"; //in.nextLine();
+            //String firstName = in.nextLine();
             passenger.setFirstName(firstName);
 
             System.out.println("Enter your Second name:");
@@ -104,6 +114,12 @@ public class TicketSystem {
     }
 
     public void chooseTicket(String city1, String city2) throws Exception {
+
+        if (!FlightCollection.isValidCity(city1) || !FlightCollection.isValidCity(city2)) {
+            System.out.println("One or both of the city names are invalid.");
+            return;
+        }
+
         Flight flight = FlightCollection.getFlightInfo(city1, city2);
 
         if (flight != null) {
@@ -114,7 +130,7 @@ public class TicketSystem {
             //in.nextLine();
 
             buyTicket(ticket_id);
-        } else {
+        } else if(FlightCollection.getFlightInfo(city2)!=null){
             Flight depart_to = FlightCollection.getFlightInfo(city2);
             String connectCity = depart_to.getDepartFrom();
 
@@ -128,15 +144,6 @@ public class TicketSystem {
             } else {
                 System.out.println("There are no possible variants.");
             }
-        }
-    }
-
-    public static void main(String[] args) {
-        TicketSystem system = new TicketSystem();
-        try {
-            system.chooseTicket("Beijing", "Shanghai");
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 }
