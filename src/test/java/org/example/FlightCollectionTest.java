@@ -33,6 +33,14 @@ class FlightCollectionTest {
         assertTrue(FlightCollection.getFlights().contains(flight1));
         assertTrue(FlightCollection.getFlights().contains(flight2));
     }
+    @Test
+    void testAddDuplicateFlight() {
+        FlightCollection.addFlight(flight1);
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            FlightCollection.addFlight(flight1);
+        });
+        assertEquals("Flight with this ID already exists in the system.", exception.getMessage());
+    }
 
     @Test
     void testValidCityNames() {

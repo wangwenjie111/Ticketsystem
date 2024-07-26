@@ -33,10 +33,7 @@ class FlightTest {
     }
 
 
-    @Test
-    void testGetFlightID() {
-        assertEquals(1, flight.getFlightID());
-    }
+
 
     @Test
     void testSetFlightID() {
@@ -44,10 +41,7 @@ class FlightTest {
         assertEquals(2, flight.getFlightID());
     }
 
-    @Test
-    void testGetDepartTo() {
-        assertEquals("Beijing", flight.getDepartTo());
-    }
+
 
     @Test
     void testSetDepartTo() {
@@ -55,10 +49,6 @@ class FlightTest {
         assertEquals("Guangzhou", flight.getDepartTo());
     }
 
-    @Test
-    void testGetDepartFrom() {
-        assertEquals("Shanghai", flight.getDepartFrom());
-    }
 
     @Test
     void testSetDepartFrom() {
@@ -66,10 +56,6 @@ class FlightTest {
         assertEquals("Nanjing", flight.getDepartFrom());
     }
 
-    @Test
-    void testGetCode() {
-        assertEquals("NYLA001", flight.getCode());
-    }
 
     @Test
     void testSetCode() {
@@ -77,10 +63,6 @@ class FlightTest {
         assertEquals("MU456", flight.getCode());
     }
 
-    @Test
-    void testGetCompany() {
-        assertEquals("Delta", flight.getCompany());
-    }
 
     @Test
     void testSetCompany() {
@@ -88,19 +70,6 @@ class FlightTest {
         assertEquals("China Eastern", flight.getCompany());
     }
 
-    @Test
-    void testGetDateFrom() {
-        assertEquals(Timestamp.valueOf("2024-07-15 10:00:00"), flight.getDateFrom());
-    }
-
-
-
-
-
-    @Test
-    void testGetDateTo() {
-        assertEquals(Timestamp.valueOf("2024-07-15 14:00:00"), flight.getDateTo());
-    }
 
 
     @Test

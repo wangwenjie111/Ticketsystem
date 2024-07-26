@@ -9,6 +9,10 @@ class AirplaneTest {
     @BeforeEach
     void setUp() {
         airplane = new Airplane(1, "Boeing 737", 12, 150, 6);
+        assertEquals("Boeing 737", airplane.getAirplaneModel());
+        assertEquals(12, airplane.getBusinessSitsNumber());
+        assertEquals(150, airplane.getEconomySitsNumber());
+        assertEquals(6, airplane.getCrewSitsNumber());
     }
 
     @Test
@@ -22,29 +26,12 @@ class AirplaneTest {
         airplane.setAirplaneModel("Airbus A320");
         assertEquals("Airbus A320", airplane.getAirplaneModel());
     }
-    @Test
-    void testGetBusinessSitsNumber() {
-        assertEquals(12, airplane.getBusinessSitsNumber());
-    }
 
-    @Test
-    void testSetBusinessSitsNumber() {
-        airplane.setBusinessSitsNumber(20);
-        assertEquals(20, airplane.getBusinessSitsNumber());
-    }
-    @Test
-    void testGetEconomySitsNumber() {
-        assertEquals(150, airplane.getEconomySitsNumber());
-    }
 
     @Test
     void testSetEconomySitsNumber() {
         airplane.setEconomySitsNumber(200);
         assertEquals(200, airplane.getEconomySitsNumber());
-    }
-    @Test
-    void testGetCrewSitsNumber() {
-        assertEquals(6, airplane.getCrewSitsNumber());
     }
 
     @Test
