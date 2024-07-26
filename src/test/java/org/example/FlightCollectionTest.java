@@ -11,7 +11,6 @@ class FlightCollectionTest {
     private Flight flight2;
     private Flight flight3;
     private Airplane airplane;
-
     @BeforeEach
     void setUp() {
         airplane = new Airplane(1, "Boeing 737", 12, 150, 6);
